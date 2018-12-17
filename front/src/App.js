@@ -14,16 +14,19 @@ class App extends Component {
     }
   }
 
+  messagesEnd = React.createRef()
+
   onInputVal = i => {
     this.setState({input: i.target.value})
   }
 
-  onSendChat = (e) => {
+  onSendChat = async (e) => {
     //Do Send to back
-    this.setState({
+    await this.setState({
       chats: [...this.state.chats, {sender:1, text:this.state.input}, {sender:2, text:'안녕!'}],
       input: '',
     })
+    this.messagesEnd.current.scrollIntoView({ behavior: 'smooth' })
   }
   render() {
     const chats = this.state.chats
@@ -36,8 +39,12 @@ class App extends Component {
         textAlign: 'center',
         }}>
         <div style={{
-          width: '100%',
+          margin:'8px',
+          padding: '4px',
+          width: '95%',
           height: '80%',
+          overflow: 'auto',
+          overflowX: 'hidden',
           }}>
           {
             chats.map((c, idx) =>
@@ -48,6 +55,7 @@ class App extends Component {
               />  
             )
           }
+          <div ref={this.messagesEnd} />
         </div>        
         <div style={{
           width: '100%',
