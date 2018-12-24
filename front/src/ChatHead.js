@@ -14,9 +14,9 @@ const userStyle={
 class ChatHead extends Component {
   render() {
     return (
-      <div class='chatUpper'> 
+      <div className='chatUpper'> 
             <div 
-            class='chat' 
+            className='chat' 
             style={this.props.sender > 1 ? botStyle: userStyle}>
               {this.props.text}
             </div>

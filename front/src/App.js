@@ -22,9 +22,21 @@ class App extends Component {
 
   onSendChat = async (e) => {
     //Do Send to back
-    await this.setState({
-      chats: [...this.state.chats, {sender:1, text:this.state.input}, {sender:2, text:'안녕!'}],
+    const umsg = this.state.input
+    this.setState({
+      chats: [...this.state.chats, {sender:1, text:umsg}],
       input: '',
+    })
+    await axios.post('http://127.0.0.1:8000/chat/', {
+      text: umsg,
+    })
+    .then(r =>{
+      this.setState({
+        chats:[...this.state.chats, {sender:2, text:r.data.text}]
+      })
+    })
+    .catch(e => {
+      console.log(e)
     })
     this.messagesEnd.current.scrollIntoView({ behavior: 'smooth' })
   }
