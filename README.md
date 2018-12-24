@@ -1,0 +1,10 @@
+# front
+
+## 1.시작하기
+시작하기 위해선 `yarn`이 필요합니다. [yarn 링크](https://yarnpkg.com/lang/en/), [npm 링크](https://www.npmjs.com/)
+```
+git clone https://github.com/KWChatbot/front.git
+cd front
+yarn install
+yarn start
+```
