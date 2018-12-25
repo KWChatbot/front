@@ -10,4 +10,4 @@ install:
     cd front && yarn install
 script:
 - |
-    cd front && yarn test
+    yarn test
