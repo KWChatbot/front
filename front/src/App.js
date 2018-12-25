@@ -37,6 +37,9 @@ class App extends Component {
     })
     .catch(e => {
       console.log(e)
+      this.setState({
+        chats:[...this.state.chats, {sender:2, text:'챗봇이 꺼져 있습니다.'}]
+      })
     })
     this.messagesEnd.current.scrollIntoView({ behavior: 'smooth' })
   }
@@ -44,16 +47,17 @@ class App extends Component {
     const chats = this.state.chats
     return (
       <div style={{
-        width: '100%',
-        height: '900px',
+        width: '97%',
+        height: '800px',
         display: 'flex',
         flexDirection: 'column',
         textAlign: 'center',
+        overflow: 'hidden',
         }}>
         <div style={{
           margin:'8px',
           padding: '4px',
-          width: '95%',
+          width: '100%',
           height: '80%',
           overflow: 'auto',
           overflowX: 'hidden',
