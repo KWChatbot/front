@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/KWChatbot/front.svg?branch=master)](https://travis-ci.org/KWChatbot/front)
+
 # kwchatbot Front
 챗봇 시연용 프론트페이지입니다.  
 
