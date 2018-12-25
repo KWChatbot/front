@@ -27,7 +27,7 @@ class App extends Component {
       chats: [...this.state.chats, {sender:1, text:umsg}],
       input: '',
     })
-    await axios.post('http://mjsong.iptime.org:8000/chat/', {
+    await axios.post('http://127.0.0.1:8000/chat/', {
       text: umsg,
     })
     .then(r =>{
