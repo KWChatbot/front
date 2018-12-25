@@ -6,8 +6,8 @@ cache:
     - node_modules
     - $HOME/.yarn-cache
 install:
-- |
-    yarn install
+- | 
+    cd front && yarn install
 script:
 - |
-    yarn test
+    cd front && yarn test
